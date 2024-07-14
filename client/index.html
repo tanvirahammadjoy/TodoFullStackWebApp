@@ -1,0 +1,84 @@
+<!-- ./index.html  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sub-container">
+        <div class="top-header">
+          <h1>To-Do List</h1>
+          <button id="dark-mode-toggle">Toggle Dark Mode</button>
+          <button id="logout-button">Logout</button>
+        </div>
+
+        <div class="input-btn">
+          <input type="text" id="todo-input" placeholder="Add a new task" />
+          <input
+            type="text"
+            id="tags-input"
+            placeholder="Tags (comma separated)"
+          />
+          <input type="date" id="due-date-input-date" />
+          <input type="time" id="due-date-input-time" />
+
+          <select id="category-select">
+            <option value="Other">Other</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+          </select>
+          <select id="priority-select">
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+          <button id="add-btn">Add</button>
+        </div>
+
+        <div class="filter-container">
+          <input type="text" id="search-input" placeholder="Search tasks" />
+          <select id="filter-category">
+            <option value="All">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Other">Other</option>
+          </select>
+          <select id="filter-priority">
+            <option value="All">All Priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <select id="filter-due-date">
+            <option value="All">All Due Dates</option>
+            <option value="Overdue">Overdue</option>
+            <option value="Today">Today</option>
+            <option value="This Week">This Week</option>
+            <option value="Future">Future</option>
+          </select>
+          <select id="filter-by-done">
+            <option id="filter-all">All Tasks</option>
+            <option id="filter-completed">Completed</option>
+            <option id="filter-uncompleted">Uncompleted</option>
+          </select>
+        </div>
+        <div id="task-counts">
+          <p>Total Tasks: <span id="total-tasks">0</span></p>
+          <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+          <p>Uncompleted Tasks: <span id="uncompleted-tasks">0</span></p>
+        </div>
+
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a02cfe0929.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

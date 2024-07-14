@@ -1,0 +1,298 @@
+/* ./styles.css */
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: azure;
+  color: black;
+}
+
+/* Main Container */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sub Container */
+.sub-container {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 650px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.top-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.top-header h1 {
+  margin: 0;
+}
+
+.top-header #dark-mode-toggle {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+.top-header #dark-mode-toggle:hover, .top-header #dark-mode-toggle:focus {
+  background-color: #bbb;
+}
+
+/* Input and Button Styles */
+.input-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: azure;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-btn input,
+.input-btn select {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.input-btn input[type="text"] {
+  flex: 2;
+}
+
+.input-btn .add-btn {
+  flex: 1;
+  max-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.input-btn .add-btn:hover, .input-btn .add-btn:focus {
+  background-color: #bbb;
+}
+
+/* Filter Container */
+.filter-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-container input,
+.filter-container select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Task Stats */
+#task-counts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#task-counts span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Todo List Styles */
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: rgb(235, 215, 254);
+  border-radius: 10px;
+  position: relative;
+}
+
+#todo-list li .todo-text {
+  flex: 1;
+}
+
+#todo-list li span.font{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+#todo-list li span.font-text{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+#todo-list li.checked {
+  color: #ff4444;
+  text-decoration: line-through;
+}
+
+#todo-list li .icons {
+  display: flex;
+  gap: 10px;
+}
+
+#todo-list li .icons i {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ff4444;
+  color: #ccc;
+  border-radius: 10px;
+}
+
+#todo-list li .icons i:hover{
+  background-color: #ccc;
+  color: #000000;
+  transition: 0.3s;
+}
+
+/* Editing Styles */
+#todo-list li.editing .todo-text {
+  display: none;
+}
+
+#todo-list li.editing input[type="text"] {
+  display: inline-block;
+  width: calc(100% - 90px);
+  background-color: rgb(235, 215, 254);
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#todo-list li.editing .icons {
+  display: none;
+}
+
+#todo-list li input[type="text"] {
+  display: none;
+}
+
+#todo-list li.overdue {
+  background-color: #ffdddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sub-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .top-header {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    background-color: #ff4444;
+  }
+
+  .input-btn {
+    width: 50%;
+    height: 100%;
+    background-color: #555;
+  }
+
+  .filter-container {
+    width: 50%;
+    height: 100%;
+    background-color: #000000;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .top-header #dark-mode-toggle {
+    padding: 5px 10px;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .sub-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode li {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background-color: #555;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background-color: #666;
+}
