@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterByDone = document.getElementById("filter-by-done");
   const token = sessionStorage.getItem("token");
 
+  // Toggle dark mode
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem(
+      "darkMode",
+      document.body.classList.contains("dark-mode")
+    );
+  });
+
+  // Load dark mode state from localStorage
+  if (JSON.parse(localStorage.getItem("darkMode"))) {
+    document.body.classList.add("dark-mode");
+  }
+
   if (!token) {
     window.location.href = "login.html";
     return;
@@ -352,6 +367,13 @@ document.addEventListener("DOMContentLoaded", () => {
       li.style.display = shouldShow ? "flex" : "none";
     });
   }
+
+  document.getElementById("logout-button").addEventListener("click", () => {
+    // Remove the token from local storage or session storage
+    localStorage.removeItem("token");
+    // Redirect to login page
+    window.location.href = "login.html";
+  });
 
   // Event listeners for filter inputs
   document
